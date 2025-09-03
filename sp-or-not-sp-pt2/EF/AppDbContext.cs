@@ -61,6 +61,8 @@ public class AppDbContext : DbContext
             }
 
             await context.SaveChangesAsync(ct);
+
+            await context.Database.ExecuteSqlRawAsync(await File.ReadAllTextAsync(@".\SQL\CopyStructure.sql", ct), cancellationToken: ct);
         });
     }
 }

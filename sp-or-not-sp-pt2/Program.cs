@@ -1,3 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using BenchmarkDotNet.Running;
+using SpOrNotSpPt2.Benchmarks;
 
-Console.WriteLine("Hello, World!");
+BenchmarkRunner.Run<SimpleBenchmark>();
